@@ -12,6 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7' 
+gem 'nested_form_fields'
 
 
 
