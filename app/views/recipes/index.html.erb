@@ -11,9 +11,10 @@
          <%= image_tag recipe.image.url, class: "recipe-show" if recipe.image? %>
 
          <h3> Title : </h3>
+         <%= recipe.title %>
        
          <h3> Description: </h3> 
-       
+          <%= recipe.description %>
           <p>
             <%= link_to "Show this recipe", recipe %>
           </p>
