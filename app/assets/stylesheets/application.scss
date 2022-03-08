@@ -16,6 +16,10 @@ html {
     color: #786dd6 ;
 }
 
+.link-primary {
+    color: #786dd6
+}
+
 
 
 /* index view styles */
@@ -70,7 +74,7 @@ img.recipe-show {
     justify-content: center;
     height: inherit;
     width: 100%;
-    background-color: rgba(125,104,242,0.30);
+    background-color: rgba(0,0,0,0.30);
 }
 .show-hero-overlay h2 {
     text-align: center;
