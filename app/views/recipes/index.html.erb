@@ -1,31 +1,26 @@
- <h1>Recipes</h1>
-
- <p id="notice"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
 
+<div id="recipes" class="container">
+  <h1>Recipes</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="row">
+  <% @recipes.each do |recipe| %>
+    <div class="col-md-3">
+      <div class="recipe-card mb-4">
+         <%= image_tag recipe.image.url, class: "recipe-show" if recipe.image? %>
 
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.title %></td>
-        <td><%= recipe.description %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+         <h3> Title : </h3>
+       
+         <h3> Description: </h3> 
+       
+          <p>
+            <%= link_to "Show this recipe", recipe %>
+          </p>
+      </div><!-- recipe-card-->
+      </div><!-- col-md-3-->
+  <% end %>
+</div><!-- row-->
+</div>
 
-<br>
-
-<%= link_to 'New Recipe', new_recipe_path %>
+<%= link_to "New recipe", new_recipe_path %>
