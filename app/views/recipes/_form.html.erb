@@ -23,22 +23,21 @@
 
   <h3> Add Ingredients </h3>
   <%= form.fields_for :ingredients do |ingredient| %>
-      <% render 'ingredient_fields', form: ingredient %>
+      <% render 'ingredient_fields', f: ingredient %>
     <% end %>
     <div class="links">
     <%= link_to_add_association "Add Ingredient", form, :ingredients  %>
     </div>
 
-
   <h3> Add Steps </h3>
-  <div class="form-group">
-    <%= form.fields_for :steps do |step| %>
-      <%= ingredient.text_field :direction %>
-      <%= ingredient.remove_nested_fields_link %> 
-
+  <%= form.fields_for :steps do |step| %>
+      <% render 'step_fields', f: step %>
     <% end %>
-      <%= form.add_nested_fields_link :steps %>
-  </div> 
+    <div class="links">
+    <%= link_to_add_association "Add Step", form, :steps  %>
+    </div>
+
+  
 
 
   <div class="actions">

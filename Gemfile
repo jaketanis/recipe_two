@@ -12,7 +12,6 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'nested_form_fields'
 gem 'cocoon'
-gem 'jquery-rails'
 
 
 
