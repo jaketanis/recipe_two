@@ -1,33 +1,33 @@
-<p id="notice"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 <% if @recipe.image? %>
-
-<%= image_tag @recipe.image.url, class: "recipe-show" %>
+	<div class="show-hero">
+		<%= image_tag @recipe.image.url, class: "recipe-show" %>
+		<div class="show-hero-overlay">
+			<%= render @recipe %> 
+		</div>
+	</div>
 
 <% end %>
-<p>
-  <h1>Title:</h1>
-  <%= @recipe.title %>
-</p>
-
-<p>
-  <h2>Description:</h2>
-  <%= @recipe.description %>
-</p>
-
-<h3>Ingredients</h3>
+<div class="container pt-5">
+	<h3>Ingredients</h3>
 	<ul>
 		<% for @ingredient in @recipe.ingredients %>
 			<li><%= @ingredient.content %></li>
 		<% end %>
 	</ul>
 
-<h3> Steps </h3>
+	<h3> Steps </h3>
 	<ol>
 		<% for @step in @recipe.steps %>
 			<li><%= @step.direction %></li>
 		<% end %>
 	</ol>	
 
-
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+	<div>
+		<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+		<%= link_to 'Back', recipes_path %>
+		<p>
+		<%= link_to "Delete this recipe", @recipe, method: :delete, data: {confirm: 'Are you sure '}, :class => "btn btn-primary" %>
+		</p>
+	</div>
+</div><!---container-->
