@@ -5,10 +5,10 @@
 
 import 'bootstrap';
 import 'cocoon';
-import Rails from '@rails/ujs';
-import TurboLinks from "turbolinks"
-import * as Active Storage from "@rails/activestorage"
-import "channels"
+require("@popperjs/core")
+require("turbolinks").start()
+require("@rails/activestorage").start()
+require("channels")
 
 Rails.start()
 Turbolinks.start()
